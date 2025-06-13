@@ -1,2 +1,2 @@
-# -TaskMaster-Pro
+# TaskMaster-Pro
 Tasks management
