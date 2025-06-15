@@ -7,22 +7,23 @@
     Package Manager: pnpm
     Containerisation: Docker
   1.2 Structure du Projet
-      src/
-    ├── assets/         # Ressources statiques
-    ├── components/     # Composants réutilisables
-    ├── contexts/       # Contextes React
-    ├── reducers/       # Reducers pour la gestion d'état
-    ├── services/       # Services métier
-    ├── styles/         # Styles globaux
-    ├── tests/          # Tests unitaires
-    ├── types/          # Types TypeScript
-    └── views/          # Composants de vue
+
+      src/.
+    ├── assets/.         # Ressources statiques
+    ├── components/.     # Composants réutilisables
+    ├── contexts/.       # Contextes React
+    ├── reducers/.       # Reducers pour la gestion d'état
+    ├── services/.       # Services métier
+    ├── styles/.         # Styles globaux
+    ├── tests/.          # Tests unitaires
+    ├── types/.          # Types TypeScript
+    └── views/.          # Composants de vue
 2. Choix de l'architecture
   2.1 Pattern Singleton pour TasksService
-    Le service de gestion des tâches implémente le pattern Singleton pour garantir :
-    Une seule instance du service dans l'application
-    Un accès global et cohérent aux données
-    Une meilleure gestion de la mémoire
+    - Le service de gestion des tâches implémente le pattern Singleton pour garantir :
+    - Une seule instance du service dans l'application
+    - Un accès global et cohérent aux données
+    - Une meilleure gestion de la mémoire
 
     class TasksService {
       private static instance: TasksService;
@@ -34,27 +35,28 @@
         return TasksService.instance;
       }
     }
-  2.2 Gestion d'État
-    Utilisation de Context API pour la gestion d'état globale
-    Séparation claire entre les données et la logique métier
-    Pattern Reducer pour les modifications d'état
-  2.3 Tests Unitaires
+  2.2. Gestion d'État
+    - Utilisation de Context API pour la gestion d'état globale
+    - Séparation claire entre les données et la logique métier
+    - Pattern Reducer pour les modifications d'état
+  2.3. Tests Unitaires
     La stratégie de test suit les principes suivants :
-    Tests pour le composant principal
-    Mocking des dépendances
-    Tests asynchrones pour les opérations CRUD
-    Vérification de l'intégrité des données
+      - Tests pour le composant principal
+      - Mocking des dépendances
+      - Tests asynchrones pour les opérations CRUD
+      - Vérification de l'intégrité des données
 3. Fonctionnalités Principales
-  3.1 Gestion des Tâches
+  3.1. Gestion des Tâches
     Création de tâches avec validation
     Mise à jour des tâches existantes
     Suppression de tâches
     Filtrage et tri des tâches
-  3.2 Gestion des Utilisateurs
+  3.2. Gestion des Utilisateurs
     Liste des utilisateurs prédéfinis
     Attribution des tâches aux utilisateurs
     Rôles utilisateurs (Développeur, Chef de projet, Designer)
-  3.3 Structure des Données
+  3.3. Structure des Données
+    
     interface Task {
       id: string;
       title: string;
@@ -72,23 +74,23 @@
       role: string;
     }
 5. Tests et Qualité
-  5.1 Tests Unitaires
+  5.1. Tests Unitaires
     Les tests couvrent :
     Création de tâches
     Mise à jour de tâches
     Suppression de tâches
     Gestion des erreurs
     Intégrité des données
-  5.2 Qualité du Code
+  5.2. Qualité du Code
     Utilisation de TypeScript pour la sécurité du typage
     ESLint pour la qualité du code
     Formatage automatique avec Prettier
 6. Déploiement
-  6.1 Containerisation
+  6.1. Containerisation
     Dockerfile pour la conteneurisation
     Configuration multi-stage pour optimiser la taille de l'image
     Variables d'environnement pour la configuration
-  6.2 Build et Déploiement
+  6.2. Build et Déploiement
     # Build de l'application
     pnpm build
 
@@ -100,7 +102,7 @@
 7. Pipeline CI/CD
     Le pipeline est configure dans .github/workflows/ci-cd.yml l'automatisation du deploiement a partir de github action
   7.2. Étapes du Pipeline
-    7.2.1 Installation et Configuration
+    7.2.1. Installation et Configuration
      Voir le fichier ci-cd.yml
      Ce que fait ce pipeline :
      Configuration de nginx.conf. il a pour role de:
@@ -117,5 +119,5 @@
       - Utilise le cache pour optimiser les builds
     Étape Deploy :
       - Se déclenche uniquement sur la branche main
-8- Comment recuperer le projet
+8. Comment recuperer le projet
   cloner le projet via https https://github.com/laMention/TaskMaster-Pro.git ou ssh git@github.com:laMention/TaskMaster-Pro.git (ne pas oublier d'avoir une cle ssh pour faire cette action)
