@@ -119,8 +119,5 @@ export class TasksService {
         this.tasks.splice(taskIndex, 1);
     }
 
-    // Simuler un delai
-    private simulateDelay(): Promise<void> {
-        return new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 200));
-    }
+    
 }
