@@ -116,7 +116,6 @@
       - La pousse vers GitHub Container Registry (ghcr.io)
       - Utilise le cache pour optimiser les builds
     Étape Deploy :
-
       - Se déclenche uniquement sur la branche main
 8- Comment recuperer le projet
   cloner le projet via https https://github.com/laMention/TaskMaster-Pro.git ou ssh git@github.com:laMention/TaskMaster-Pro.git (ne pas oublier d'avoir une cle ssh pour faire cette action)
