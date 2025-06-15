@@ -99,7 +99,7 @@ export class TasksService {
         
         const taskIndex = this.tasks.findIndex(task => task.id === id);
         if (taskIndex === -1) {
-        throw new Error('Task not found');
+        throw new Error('Tache non trouvee');
         }
         this.tasks[taskIndex] = {
         ...this.tasks[taskIndex],
@@ -114,7 +114,7 @@ export class TasksService {
         
         const taskIndex = this.tasks.findIndex(task => task.id === id);
         if (taskIndex === -1) {
-        throw new Error('Task not found');
+        throw new Error('Tache non trouvee');
         }
         this.tasks.splice(taskIndex, 1);
     }

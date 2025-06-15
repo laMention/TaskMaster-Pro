@@ -69,8 +69,8 @@ const mockTasks: Task[] = [
     priority: 'high',
     status: 'todo',
     assignedTo: '1',
-    createdAt: '2023-01-01T00:00:00.000Z',
-    updatedAt: '2023-01-01T00:00:00.000Z'
+    createdAt: '2025-06-15T19:21:08.540Z',
+    updatedAt: '2025-06-15T19:21:08.540Z'
   },
   {
     id: '2',
@@ -79,8 +79,8 @@ const mockTasks: Task[] = [
     priority: 'medium',
     status: 'in-progress',
     assignedTo: '2',
-    createdAt: '2023-01-01T00:00:00.000Z',
-    updatedAt: '2023-01-01T00:00:00.000Z'
+    createdAt: '2025-06-15T19:21:08.540Z',
+    updatedAt: '2025-06-15T19:21:08.540Z'
   }
 ];
 

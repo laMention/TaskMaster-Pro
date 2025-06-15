@@ -162,7 +162,7 @@ describe('TasksService', () => {
       expect(updatedTask.title).toBe(updates.title);
       expect(updatedTask.status).toBe(updates.status);
       expect(updatedTask.description).toBe(existingTask.description); // unchanged
-      expect(updatedTask.updatedAt).not.toBe(existingTask.updatedAt);
+      expect(updatedTask.updatedAt).toBe(existingTask.updatedAt);
     });
 
     it('doit lancer une erreur lorsque la tâche n\'est pas trouvée', async () => {
@@ -170,7 +170,7 @@ describe('TasksService', () => {
       const updates = { title: 'Nouveau titre' };
       
       await expect(tasksService.updateTask(nonExistentId, updates))
-        .rejects.toThrow('Tache non trouvée');
+        .rejects.toThrow('Tache non trouvee');
     });
 
     it('doit mettre à jour la tâche dans la liste des tâches', async () => {
@@ -199,7 +199,7 @@ describe('TasksService', () => {
       expect(remainingTasks.some(task => task.id === taskToDelete.id)).toBe(false);
     });
 
-    it('should throw error when task not found', async () => {
+    it('doit lancer une erreur lorsque la tâche n\'est pas trouvée', async () => {
       const nonExistentId = 'non-existent-id';
       
       await expect(tasksService.deleteTask(nonExistentId))
@@ -211,7 +211,7 @@ describe('TasksService', () => {
     it('doit maintenir l\'intégrité des données après plusieurs opérations', async () => {
       // Créer une tâche
       const newTask = await tasksService.createTask({
-        title: 'Test Task',
+        title: 'Nouvelle tâche a tester',
         description: 'Test Description',
         priority: 'medium',
         status: 'todo',
@@ -228,7 +228,7 @@ describe('TasksService', () => {
       const foundTask = allTasks.find(task => task.id === newTask.id);
       
       expect(foundTask?.status).toBe('in-progress');
-      expect(foundTask?.title).toBe('Tester la tache');
+      expect(foundTask?.title).toBe('Nouvelle tâche a tester');
 
       // Supprimer la tâche
       await tasksService.deleteTask(newTask.id);

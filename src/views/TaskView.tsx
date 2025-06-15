@@ -41,6 +41,9 @@ const TaskView: React.FC = () => {
         ]);
         dispatch({ type: 'SET_TASKS', payload: tasks });
         dispatch({ type: 'SET_USERS', payload: users });
+
+        console.log("liste des tâches",tasks);
+        console.log("liste des utilisateurs",users);
       } catch (error) {
         console.error(error);
         dispatch({ type: 'SET_ERROR', payload: 'Erreur lors du chargement des données' });
