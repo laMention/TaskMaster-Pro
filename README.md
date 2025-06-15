@@ -103,6 +103,10 @@
     7.2.1 Installation et Configuration
      Voir le fichier ci-cd.yml
      Ce que fait ce pipeline :
+     Configuration de nginx.conf. il a pour role de:
+      - Définir le port d'écoute (80)
+      - Spécifier le répertoire racine des fichiers statiques
+      - Configurer la page d'index par défaut
      Étape Test :
       - Installe les dépendances Node.js
       - Lance le linter et les tests
